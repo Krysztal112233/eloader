@@ -1,0 +1,5 @@
+{
+  "evenBetterToml.formatter.allowedBlankLines": 2,
+  "evenBetterToml.formatter.indentEntries": true,
+  "evenBetterToml.formatter.reorderKeys": true
+}

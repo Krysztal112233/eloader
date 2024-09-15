@@ -1,0 +1,16 @@
+[package]
+    authors = ["KrysztalHuang <krysztal.huang@outlook.com>"]
+    edition = "2021"
+    keywords = ["ffi", "extension"]
+    license = "MIT/Apache-2.0"
+    name = "eloader-rs"
+    readme = "README.md"
+    repository = "https://github.com/rodrimati1992/abi_stable_crates/"
+    rust-version = "1.61.0"
+    version = "0.1.0"
+
+[dependencies]
+    abi_stable = "0.11"
+    log = "0"
+    thiserror = "1.0"
+    walkdir = "2.5"
