@@ -232,6 +232,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ext2"
+version = "0.1.0"
+dependencies = [
+ "abi_stable",
+ "loader",
+ "log",
+]
+
+[[package]]
 name = "generational-arena"
 version = "0.2.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"

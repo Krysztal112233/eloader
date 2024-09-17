@@ -3,14 +3,13 @@
 use abi_stable::{
     export_root_module,
     prefix_type::PrefixTypeTrait,
-    std_types::RResult::{self, ROk},
+    std_types::RResult::{self, RErr},
 };
 use loader::{
     context::ExtensionContext,
     error::Error,
     extension::{Extension, ExtensionMeta, ExtensionRef},
 };
-use log::info;
 
 #[export_root_module]
 fn initializer() -> ExtensionRef {
@@ -22,14 +21,13 @@ fn initializer() -> ExtensionRef {
 extern "C" fn meta() -> ExtensionMeta {
     ExtensionMeta {
         author: "KrysztalHuang".into(),
-        name: "ExampleExtension1".into(),
+        name: "ExampleExtension2".into(),
     }
 }
 
 #[no_mangle]
 extern "C" fn load(_ctx: &mut ExtensionContext) -> RResult<(), Error> {
-    info!("`ExampleExtension1` Loaded!");
-    ROk(())
+    RErr(Error::Unknown)
 }
 
 #[no_mangle]

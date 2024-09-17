@@ -5,6 +5,7 @@
         "examples/loader",
         "examples/extension/ext0",
         "examples/extension/ext1",
+        "examples/extension/ext2",
     ]
     resolver = "2"
 

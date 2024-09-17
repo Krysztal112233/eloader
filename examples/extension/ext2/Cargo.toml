@@ -1,7 +1,7 @@
 [package]
     authors = ["KrysztalHuang <krysztal.huang@outlook.com>"]
     edition = "2021"
-    name = "ext1"
+    name = "ext2"
     publish = false
     version = "0.1.0"
 
