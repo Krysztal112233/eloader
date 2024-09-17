@@ -1,5 +1,8 @@
 {
   "evenBetterToml.formatter.allowedBlankLines": 2,
   "evenBetterToml.formatter.indentEntries": true,
-  "evenBetterToml.formatter.reorderKeys": true
+  "evenBetterToml.formatter.reorderKeys": true,
+  "terminal.integrated.env.windows": {
+    "RUST_LOG": "info"
+  }
 }
