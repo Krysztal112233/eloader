@@ -1,7 +1,7 @@
 pub mod container;
 pub mod error;
 
-use abi_stable::library::RootModule;
+use abi_stable::{library::RootModule, StableAbi};
 use container::ExtensionContainer;
 use error::Error;
 use std::marker::PhantomData;
@@ -13,7 +13,10 @@ pub struct ExtensionLoader<T> {
     _mark: PhantomData<T>,
 }
 
-impl<T> ExtensionLoader<T> {
+impl<T> ExtensionLoader<T>
+where
+    T: StableAbi,
+{
     pub fn new(walker: WalkDir) -> Self {
         Self {
             walker,
@@ -34,6 +37,7 @@ where
             .into_iter()
             .flatten()
             .map(DirEntry::into_path)
+            .filter(|it| it.is_file())
             .map(ExtensionContainer::try_from)
             .collect::<Vec<_>>()
             .into_iter()

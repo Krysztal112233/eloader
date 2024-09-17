@@ -1,7 +1,9 @@
-use abi_stable::library::RootModule;
-use std::path::{Path, PathBuf};
+#![doc = include_str!("../../README.md")]
 
 use crate::error::Error;
+use abi_stable::library::RootModule;
+use log::debug;
+use std::path::{Path, PathBuf};
 
 #[derive(Debug)]
 pub struct ExtensionContainer<T> {
@@ -24,14 +26,15 @@ where
     }
 }
 
-impl<M> TryFrom<&Path> for ExtensionContainer<M>
+impl<T> TryFrom<&Path> for ExtensionContainer<T>
 where
-    M: RootModule,
+    T: RootModule,
 {
     type Error = Error;
 
     fn try_from(value: &Path) -> Result<Self, Self::Error> {
-        let module = M::load_from_file(value)?;
+        debug!("Try to load file {}", value.to_str().unwrap());
+        let module = T::load_from_file(value)?;
 
         Ok(ExtensionContainer {
             path: value.to_path_buf(),
@@ -40,9 +43,9 @@ where
     }
 }
 
-impl<M> TryFrom<PathBuf> for ExtensionContainer<M>
+impl<T> TryFrom<PathBuf> for ExtensionContainer<T>
 where
-    M: RootModule,
+    T: RootModule,
 {
     type Error = Error;
 

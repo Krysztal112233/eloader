@@ -1,0 +1,16 @@
+[package]
+    authors = ["KrysztalHuang <krysztal.huang@outlook.com>"]
+    edition = "2021"
+    keywords = ["ffi", "extension"]
+    license = "MIT/Apache-2.0"
+    name = "eloader"
+    readme = "README.md"
+    repository = "https://github.com/Krysztal112233/eloader-rs"
+    rust-version = "1.61.0"
+    version = "0.1.0"
+
+[dependencies]
+    abi_stable = { workspace = true }
+    log = { workspace = true }
+    thiserror = { workspace = true }
+    walkdir = { workspace = true }

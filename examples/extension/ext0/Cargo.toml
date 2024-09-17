@@ -1,0 +1,15 @@
+[package]
+    authors = ["KrysztalHuang <krysztal.huang@outlook.com>"]
+    edition = "2021"
+    name = "ext0"
+    publish = false
+    version = "0.1.0"
+
+[lib]
+    crate-type = ["cdylib"]
+    name = "libext0"
+
+[dependencies]
+    abi_stable = { workspace = true }
+    loader = { workspace = true }
+    log = { workspace = true }
